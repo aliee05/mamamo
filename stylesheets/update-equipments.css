@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--main-bg, #12171B); /* Matches update-manage.css */
+    margin: 0;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-box {
+    background: var(--welcome-bg, #00695C); /* Matches update-manage.css */
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    margin: -25px 0 10px 0;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-align: left;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: var(--container-bg, #2A2F33); /* Matches update-manage.css */
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+}
+
+.message-error {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #fff;
+    background-color: rgba(240, 98, 146, 0.9); /* Matches account-management.php error */
+    margin: 0 0 1rem 0;
+    padding: 0.4rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(240, 98, 146, 0.2);
+}
+
+.message-error p {
+    margin: 0.1rem 0;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin: 0 0 1rem 0;
+    position: relative;
+}
+
+.form-group label {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 12rem;
+    margin-right: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--label-color, #ffffff); /* Matches update-manage.css */
+    background-color: var(--label-bg, #3e4b5b); /* Matches update-manage.css */
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.05),
+                0 0.2rem 0.6rem rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.form-group label:hover {
+    background-color: var(--label-hover-bg, #4a5a6b); /* Matches update-manage.css */
+    color: var(--label-hover-color, #e0e0e0); /* Matches update-manage.css */
+    transform: translateY(-0.125rem);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    flex: 1;
+    padding: 0.7rem;
+    border: 0.06rem solid var(--input-border, #b0c4de); /* Matches update-manage.css */
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.2s;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+    background: var(--input-bg, #212529); /* Matches update-manage.css */
+    color: var(--input-color, #ffffff); /* Matches update-manage.css */
+}
+
+.form-group input[disabled] {
+    background-color: var(--disabled-bg, #3e4b5b); /* Matches update-manage.css */
+    color: #666;
+    cursor: not-allowed;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007BFF; /* Matches update-manage.css */
+    outline: none;
+    box-shadow: 0 0 0.2rem rgba(0, 123, 255, 0.3),
+                0 0.1rem 0.5rem rgba(0, 123, 255, 0.1);
+}
+
+.form-group .radio-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-group input[type="radio"] {
+    appearance: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 0.125rem solid #007BFF; /* Matches update-manage.css */
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    margin-right: 0.5rem;
+}
+
+.form-group input[type="radio"]:checked {
+    background-color: #007BFF; /* Matches update-manage.css */
+    border: 0.125rem solid #0056b3; /* Matches update-manage.css */
+}
+
+.form-group input[type="radio"]:checked::before {
+    content: '';
+    width: 0.6rem;
+    height: 0.6rem;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.button-group input[type="submit"],
+.button-group a {
+    background-color: #0056b3; /* Matches update-manage.css */
+    color: white;
+    border: none;
+    padding: 0.9rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+.button-group input[type="submit"]:hover,
+.button-group a:hover {
+    background-color: #004085; /* Matches update-manage.css */
+    transform: translateY(-0.125rem);
+}
+
+.button-group a {
+    background-color: #c82333; /* Matches update-manage.css */
+}
+
+.button-group a:hover {
+    background-color: #bd2130; /* Matches update-manage.css */
+}

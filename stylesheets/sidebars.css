@@ -1,0 +1,147 @@
+/* Professional 3D design with logins.css color scheme */
+:root {
+    --sidebar-bg: linear-gradient(180deg, #1976d2 0%, #42a5f5 100%); /* Blue gradient from left panel */
+    --topbar-bg: linear-gradient(90deg, #1976d2 0%, #d32f2f 100%); /* Blue-to-red gradient */
+    --main-bg: #fafafa; /* Matches login container background */
+    --icon-color: #d32f2f; /* Red for icons */
+    --hover-bg: #42a5f5; /* Lighter blue for hover */
+    --active-bg: #d32f2f; /* Red for active state */
+    --text-color: #fff; /* White for sidebar text */
+    --logout-border: #d32f2f; /* Red for logout border */
+    --logout-hover: #d32f2f; /* Red for logout hover */
+    --university-title-color: #fff; /* White for title */
+    --topbar-icon-color: #fff; /* White for topbar icons */
+}
+
+.sidebar {
+    width: 260px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: var(--sidebar-bg);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    color: var(--text-color);
+    box-shadow: 6px 0 20px rgba(0, 0, 0, 0.15); /* Deeper 3D shadow */
+    border-right: 1px solid rgba(25, 118, 210, 0.3); /* Subtle blue border */
+}
+
+.sidebar .nav-link {
+    font-size: 16px;
+    padding: 14px 24px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+    position: relative;
+    margin: 0 12px;
+    background: linear-gradient(135deg, rgba(25, 118, 210, 0.1), rgba(25, 118, 210, 0.2)); /* Subtle blue gradient */
+}
+
+.sidebar .nav-link i {
+    font-size: 20px;
+    color: var(--icon-color);
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    transform: translateY(-3px);
+    background: var(--hover-bg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    color: var(--text-color);
+}
+
+.sidebar .nav-link.active {
+    background: var(--active-bg);
+    color: var(--text-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar .nav-link.active i {
+    color: var(--text-color);
+}
+
+.university-title {
+    color: var(--university-title-color);
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.logo-3d {
+    transition: all 0.3s ease;
+}
+
+.logo-3d:hover {
+    transform: scale(1.08) rotate(3deg);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+}
+
+.logout-btn {
+    border-radius: 10px;
+    padding: 14px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--logout-border);
+    color: var(--text-color);
+    font-weight: 600;
+    background: rgba(211, 47, 47, 0.1); /* Subtle red background */
+}
+
+.logout-btn:hover {
+    transform: translateY(-3px);
+    background: var(--logout-hover);
+    color: #FFFFFF;
+    box-shadow: 0 8px 16px rgba(211, 47, 47, 0.5); /* Red-tinted shadow */
+}
+
+.top-bar {
+    margin-left: 260px;
+    background: var(--topbar-bg);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(25, 118, 210, 0.3); /* Subtle blue border */
+}
+
+.welcome-text {
+    color: var(--topbar-icon-color);
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar .icon-3d {
+    color: var(--topbar-icon-color);
+    transition: all 0.3s ease;
+    padding: 8px;
+    margin: 0;
+}
+
+.top-bar .d-flex {
+    gap: 8px;
+    align-items: center;
+}
+
+.top-bar .icon-3d:hover {
+    transform: scale(1.15) rotate(6deg);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.letter-spacing {
+    letter-spacing: 1.5px;
+}
+
+.main-content {
+    margin-left: 260px;
+    margin-top: 70px;
+    min-height: calc(100vh - 70px);
+    background: var(--main-bg) !important;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}

@@ -1,0 +1,357 @@
+:root {
+    --main-bg: #12171B;
+    --main-bg-light: #F7F9FA;
+    --button-default: #008E97;
+    --button-default-hover: #00737a;
+    --button-add: #28a745;
+    --button-add-hover: #218838;
+    --button-update: #ffc107;
+    --button-update-hover: #e0a800;
+    --button-delete-table: #d9534f;
+    --button-delete-table-hover: #c9302c;
+    --button-assign: #17a2b8; /* New color for Assign button */
+    --button-assign-hover: #138496; /* Hover color for Assign */
+    --button-approve: #28a745; /* Same as add for Approve button */
+    --button-approve-hover: #218838; /* Hover for Approve */
+    --table-even-bg: #2A2F33;
+    --table-odd-bg: #212529;
+    --table-text-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.theme-body {
+    background: var(--main-bg);
+    min-height: 100vh;
+}
+
+[data-theme="light"] .theme-body {
+    background: var(--main-bg-light);
+}
+
+.content {
+    margin-left: 250px;
+    padding: 2rem 0.289rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 1400px !important;
+    width: 100% !important;
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    margin-top: 30px;
+}
+
+.message-error {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #fff;
+    background-color: rgba(240, 98, 146, 0.9);
+    margin: 0 0 1rem 0;
+    padding: 0.4rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(240, 98, 146, 0.2);
+}
+
+.message-error p {
+    margin: 0.1rem 0;
+}
+
+.search-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 0.06rem solid #ccc;
+    border-radius: 0.3rem;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+}
+
+.search-container input {
+    padding: 0.7rem;
+    width: 240px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+    color: #000000;
+}
+
+[data-theme="light"] .search-container input {
+    color: #000000;
+}
+
+.search-container input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 0.2rem rgba(0, 123, 255, 0.3);
+}
+
+.search-container button {
+    background: var(--button-default);
+    color: white;
+    border: none;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background: var(--button-default-hover);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.7rem 1rem;
+    border: none;
+    background: var(--button-default);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--button-default-hover);
+    transform: translateY(-0.125rem);
+}
+
+.add-btn {
+    background: var(--button-add) !important;
+}
+
+.add-btn:hover {
+    background: var(--button-add-hover);
+}
+
+.update-btn {
+    background: var(--button-update) !important;
+}
+
+.update-btn:hover {
+    background: var(--button-update-hover);
+}
+
+.delete-btn {
+    background: var(--button-delete-table) !important;
+}
+
+.delete-btn:hover {
+    background: var(--button-delete-table-hover);
+}
+
+.details-btn {
+    background: var(--button-add) !important;
+}
+
+.details-btn:hover {
+    background: var(--button-add-hover);
+}
+
+.assign-btn {
+    background: var(--button-assign) !important;
+}
+
+.assign-btn:hover {
+    background: var(--button-assign-hover) !important;
+}
+
+.approve-btn {
+    background: var(--button-approve) !important;
+}
+
+.approve-btn:hover {
+    background: var(--button-approve-hover) !important;
+}
+
+.table-section table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.1);
+}
+
+.table-section th {
+    background: var(--button-default);
+    color: var(--table-text-color);
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+[data-theme="light"] .table-section th {
+    background: var(--button-default);
+    color: #ffffff;
+}
+
+.table-section tr:nth-child(even) {
+    background-color: var(--table-even-bg);
+}
+
+[data-theme="light"] .table-section tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-section tr:nth-child(odd) {
+    background-color: var(--table-odd-bg);
+}
+
+[data-theme="light"] .table-section tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.table-section td {
+    padding: 0.9rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--table-text-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+[data-theme="light"] .table-section td {
+    color: #343a40;
+}
+
+.table-section th:nth-child(1), .table-section td:nth-child(1) {
+    max-width: 150px;
+}
+
+.table-section th:nth-child(2), .table-section td:nth-child(2) {
+    max-width: 300px;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.table-section th:nth-child(3), .table-section td:nth-child(3) {
+    max-width: 120px;
+}
+
+.table-section th:nth-child(4), .table-section td:nth-child(4) {
+    max-width: 100px;
+}
+
+.table-section th:nth-child(5), .table-section td:nth-child(5) {
+    max-width: 120px;
+}
+
+.table-section th:nth-child(6), .table-section td:nth-child(6) {
+    max-width: 180px;
+}
+
+.table-section .btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+    min-width: 30px;
+}
+
+.inline-form {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.error {
+    color: #e74c3c;
+    text-align: center;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.details-container {
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+.details-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.details-row:nth-child(even) {
+    background-color: var(--table-even-bg);
+}
+
+[data-theme="light"] .details-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.details-row:nth-child(odd) {
+    background-color: var(--table-odd-bg);
+}
+
+[data-theme="light"] .details-row:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.details-label {
+    font-weight: bold;
+    color: #ffffff;
+    width: 40%;
+    text-align: left;
+    padding: 0 0 0 30px;
+}
+
+[data-theme="light"] .details-label {
+    color: #343a40;
+}
+
+.details-value {
+    color: #e0e0e0;
+    width: 40%;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+[data-theme="light"] .details-value {
+    color: #555;
+}
+
+.action-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.action-row {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}

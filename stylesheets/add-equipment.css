@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.theme-body {
+    background: var(--main-bg, #12171B);
+    min-height: 100vh;
+}
+
+[data-theme="light"] .theme-body {
+    background: #F7F9FA;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: var(--container-bg, #2A2F33);
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    margin-top: 30px !important;
+}
+
+[data-theme="light"] .container {
+    background: #fff;
+}
+
+.message-error {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #fff;
+    background-color: rgba(224, 83, 97, 0.9);
+    margin: 0 0 1rem 0;
+    padding: 0.4rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(224, 83, 97, 0.2);
+}
+
+.message-error p {
+    margin: 0.1rem 0;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin: 0 0 1rem 0;
+    position: relative;
+}
+
+.form-group label {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 12rem;
+    margin-right: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--label-color, #ffffff);
+    background-color: var(--label-bg, #3e4b5b);
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.05),
+                0 0.2rem 0.6rem rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+[data-theme="light"] .form-group label {
+    color: #343a40;
+    background-color: #f0f8ff;
+}
+
+.form-group label:hover {
+    background-color: var(--label-hover-bg, #4a5a6b);
+    color: var(--label-hover-color, #e0e0e0);
+    transform: translateY(-0.125rem);
+}
+
+[data-theme="light"] .form-group label:hover {
+    background-color: #e1f0ff;
+    color: #0056b3;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    flex: 1;
+    padding: 0.7rem;
+    border: 0.06rem solid var(--input-border, #b0c4de);
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.2s;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+    background: var(--input-bg, #212529);
+    color: var(--input-color, #ffffff);
+}
+
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group select,
+[data-theme="light"] .form-group textarea {
+    background: #ffffff;
+    color: #000000;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 0.2rem rgba(0, 123, 255, 0.3),
+                0 0.1rem 0.5rem rgba(0, 123, 255, 0.1);
+}
+
+.form-group .radio-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-group input[type="radio"] {
+    appearance: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 0.125rem solid #007BFF;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    margin-right: 0.5rem;
+}
+
+.form-group input[type="radio"]:checked {
+    background-color: #007BFF;
+    border: 0.125rem solid #0056b3;
+}
+
+.form-group input[type="radio"]:checked::before {
+    content: '';
+    width: 0.6rem;
+    height: 0.6rem;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-group .radio-group label {
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+    color: var(--radio-label-color, #ffffff);
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+[data-theme="light"] .form-group .radio-group label {
+    color: #343a40;
+}
+
+.form-group .radio-group label:hover {
+    background-color: transparent;
+    color: var(--radio-hover-color, #e0e0e0);
+}
+
+[data-theme="light"] .form-group .radio-group label:hover {
+    color: #007BFF;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.button-group input[type="submit"],
+.button-group a {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 0.9rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+.button-group input[type="submit"]:hover,
+.button-group a:hover {
+    background-color: #004085;
+    transform: translateY(-0.125rem);
+}
+
+.button-group a {
+    background-color: #c82333;
+}
+
+.button-group a:hover {
+    background-color: #bd2130;
+}

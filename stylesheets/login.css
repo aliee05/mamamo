@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+}
+
+.header {
+    background: #004a99;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.header img {
+    width: 4.5rem;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.header-text h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.header-text h2 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #e0e0e0;
+}
+
+.form {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    margin-top: 6.7rem !important;
+}
+
+.form .form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-detail h2 {
+    font-size: 1.8rem;
+    color: #004a99;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.form-detail p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    display: block;
+    background: rgba(255, 0, 0, 0.1);
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
+.form .form-contents {
+    width: 100%;
+}
+
+.input-field {
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    font-size: 1rem;
+}
+
+.input-field input {
+    width: 100%;
+    height: 50px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-field input:focus {
+    border-color: #00bcd4;
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.4);
+}
+
+.input-field label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #333;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.input-field input:focus ~ label,
+.input-field input:not(:placeholder-shown) ~ label {
+    font-size: 0.85rem;
+    top: -10px;
+    color: #00bcd4;
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #666;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+button {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    background: #62a6ee;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #004a99;
+}
+
+.forgot-pass {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    color: #00bcd4;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.forgot-pass:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.social-icons img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.chief-logo {
+    position: relative;
+    margin-bottom: -20px;
+}
+
+.chief-logo img {
+    width: 80%;
+    max-width: 150px;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    .form {
+        max-width: 100%;
+        padding: 30px;
+        border-radius: none;
+    }
+
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header img {
+        width: 3rem;
+        margin: 0 auto;
+    }
+
+    .header h1 {
+        font-size: 1.2rem;
+    }
+
+    .social-icons {
+        flex-wrap: wrap;
+    }
+
+    .social-icons a {
+        margin: 5px;
+    }
+}

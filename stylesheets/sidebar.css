@@ -1,0 +1,172 @@
+:root {
+    --sidebar-bg: linear-gradient(180deg, #1A252F 0%, #0F151A 100%);
+    --topbar-bg: linear-gradient(90deg, #2C3E50 0%, #455A64 100%);
+    --main-bg: #12171B;
+    --icon-color: #26A69A;
+    --hover-bg: #37474F;
+    --active-bg: #00695C;
+    --text-color: #E0E0E0;
+    --logout-border: #C62828;
+    --logout-hover: #C62828;
+    --university-title-color: #E0E0E0;
+    --topbar-icon-color: #E0E0E0;
+}
+
+[data-theme="light"] {
+    --sidebar-bg: #F0F2F5;
+    --topbar-bg: #E8ECEF;
+    --main-bg: #F7F9FA;
+    --icon-color: #00695C;
+    --hover-bg: #CFD8DC;
+    --active-bg: #26A69A;
+    --text-color: #00695C;
+    --logout-border: #C62828;
+    --logout-hover: #C62828;
+    --university-title-color: #263238;
+    --topbar-icon-color: #263238;
+}
+
+.sidebar {
+    width: 240px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: var(--sidebar-bg);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    color: var(--text-color);
+}
+
+.sidebar .nav-link {
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+    position: relative;
+    margin: 0 10px;
+}
+
+.sidebar .nav-link i {
+    font-size: 20px;
+    color: var(--icon-color);
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    transform: translateY(-2px);
+    background: var(--hover-bg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+}
+
+.sidebar .nav-link:hover::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 10%;
+    height: 80%;
+    width: 4px;
+    background: var(--icon-color);
+    border-radius: 0;
+}
+
+.sidebar .nav-link.active {
+    background: var(--active-bg);
+    color: var(--text-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar .nav-link.active i {
+    color: var(--text-color);
+}
+
+.sidebar .nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 10%;
+    height: 80%;
+    width: 4px;
+    background: var(--text-color);
+    border-radius: 0;
+}
+
+.university-title {
+    color: var(--university-title-color);
+}
+
+.logo-3d {
+    transition: all 0.3s ease;
+}
+
+.logo-3d:hover {
+    transform: scale(1.05) rotate(2deg);
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+}
+
+.logout-btn {
+    border-radius: 8px;
+    padding: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--logout-border);
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.logout-btn:hover {
+    transform: translateY(-2px);
+    background: var(--logout-hover);
+    color: #FFFFFF;
+    box-shadow: 0 6px 12px rgba(198, 40, 40, 0.4);
+}
+
+.top-bar {
+    margin-left: 260px;
+    background: var(--topbar-bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: var(--text-color);
+}
+
+.welcome-text {
+    color: var(--topbar-icon-color);
+}
+
+.top-bar .icon-3d {
+    color: var(--topbar-icon-color);
+    transition: all 0.3s ease;
+    padding: 6px;
+    margin: 0;
+}
+
+.top-bar .d-flex {
+    gap: 6px;
+    align-items: center;
+}
+
+.top-bar .icon-3d:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2));
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.letter-spacing {
+    letter-spacing: 1.5px;
+}
+
+.main-content {
+    margin-left: 260px;
+    margin-top: 70px;
+    min-height: calc(100vh - 70px);
+    background: var(--main-bg) !important;
+    transition: all 0.3s ease;
+}
